@@ -6,31 +6,35 @@
  */
 
 // variables
-const numMarksInput: string | null = prompt("How many marks will you enter today?");
-const numMarks: number = Number(numMarksInput);
-
-// initialize 
+let numMarksString: string = "";
+let numMarks: number = 0;
+let markString: string = "";
+let markNumber: number = 0;
 let total: number = 0;
 
-// get marks from the user
-for (let i = 1; i <= numMarks; i++) {
-  const markInput: string | null = prompt(`Enter mark ${i}:`);
-  const mark: number = Number(markInput);
-  total += mark;
+// input number of marks
+numMarksString = prompt("How many marks will you enter today? ") || "0";
+numMarks = parseInt(numMarksString);
+
+// loop through each mark
+for (let counter: number = 1; counter <= numMarks; counter++) {
+  markString = prompt(`Enter mark ${counter}: `) || "0";
+  markNumber = parseFloat(markString);
+  total += markNumber;
 }
 
 // calculate average
 const average: number = total / numMarks;
 
 // output
-console.log(`You entered ${numMarks} marks. Average: ${average}%`);
+console.log(`\nYou have entered ${numMarks} marks. The student's average is ${average}%.`);
 
 if (average <= 49) {
   console.log("The student is failing.");
 } else if (average <= 69) {
-  console.log("Performance is just under average.");
+  console.log("The student's performance is just under average.");
 } else if (average <= 79) {
-  console.log("Performance is average.");
+  console.log("The student's performance is average.");
 } else {
   console.log("The student is on the honour roll.");
 }
