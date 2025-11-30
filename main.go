@@ -31,7 +31,7 @@ func main() {
 	average := total / float64(numMarks)
 
 	// Output
-	fmt.Printf("\nYou have entered %d marks. The student's average is %.2f%%.\n", numMarks, average)
+	fmt.Printf("\nYou have entered %d marks. The student's average is %.0f%%.\n", numMarks, average)
 
 	if average <= 49 {
 		fmt.Println("The student is failing.")
